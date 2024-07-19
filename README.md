@@ -9,7 +9,7 @@ This project is a NestJS application with a PostgreSQL database that allows user
 1. **Clone the repository:**
 
    ```sh
-   git clone <repository-url>
+   git clone https://github.com/soheib08/boxzi-followers-backend
    cd boxzi-backend
    ```
 
