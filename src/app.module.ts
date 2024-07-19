@@ -1,24 +1,28 @@
 import { Module } from '@nestjs/common';
 import { AppService } from './app.service';
-import { CacheModule } from '@nestjs/cache-manager';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Follower } from './follower/domain/follower.entity';
 import { UsersModule } from './users/users.module';
 import { User } from './users/domain/user.entity';
 import { FollowersModule } from './follower/followers.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
-    CacheModule.register({ isGlobal: true }),
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: 'db',
       port: 5432,
       username: 'postgres',
       password: 'postgres',
       database: 'postgres',
-      entities: [Follower, User],
       synchronize: true,
+      autoLoadEntities: true,
+      entities: [Follower, User],
     }),
     UsersModule,
     FollowersModule,

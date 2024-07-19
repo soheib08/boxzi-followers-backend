@@ -6,7 +6,7 @@ import {
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Follower } from '../domain/follower.entity';
-import { UsersRepository } from 'src/users/user.repository';
+import { UsersRepository } from 'src/users/user.service';
 
 @Injectable()
 export class UnFollowService {
