@@ -15,12 +15,12 @@ This project is a NestJS application with a PostgreSQL database that allows user
 
 2. **Build and run the application:**
 
-```sh
- docker-compose up --build
-```
+   ```sh
+   docker-compose up --build
+   ```
 
 3. **Test Apis:**
 
-```
- localhost:3000/api
-```
+   ```
+   localhost:3000/api
+   ```
